@@ -967,6 +967,68 @@ body {
         opacity: 1;
     }
 }
+.letter-pages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.letter-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+.letter-page.active {
+    opacity: 1;
+    visibility: visible;
+}
+.letter-page h2 {
+    font-family: 'Dancing Script', cursive;
+    padding: 0px 20px;
+    text-indent: 20px;
+    font-size: 22px;
+    opacity: 0;
+    margin: 0;
+    line-height: 1.6;
+    transition: opacity 0.5s ease;
+}
+.boxMail .boxMail-container .card2:hover .letter-page.active h2 {
+    animation: texth2 2s forwards;
+    animation-delay: 4s;
+    transition: 1s;
+}
+.letter-page.active h2 {
+    opacity: 1;
+}
+.page-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+.page-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.page-dot.active {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.2);
+}
+.boxMail .boxMail-container .card2 .card2-content {
+    cursor: pointer;
+}
 .boxMail .boxMail-container .card2 .card2-content .imageCute2{
     position: absolute;
     top: 5px;
